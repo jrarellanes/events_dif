@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EVENTOS DIF</title>
+  
+
+<%= stylesheet_link_tag '../flutie', "bootstrap", "jquery-ui-1.8.23.custom" %>
+<%= javascript_include_tag 'application' %>
+
+
+  <%= csrf_meta_tags %>
+    <style type="text/css">
+      body { background-color: #dadada;}
+    .content {
+      background: #fff;
+      padding: 40px;
+      margin: 40px auto;
+      width: 880px;
+      -moz-border-radius: 24px;
+      -webkit-border-radius: 24px;
+    }
+
+    </style>
+    
+</head>
+<body>
+ 
+<% if notice  %>
+<div id="notice" class="success"><%= notice %></div>
+<% end %>
+<div id="structure" style="margin: auto; background:  #f6bb29">
+<header>
+         
+        <nav class="round">
+          <ul>
+            <li><%= link_to "Inicio", home_path %></li>
+            <% if current_user_session %>
+              <li><%= link_to 'Eventos', eventos_url %></li>
+            <% end %>
+            <% if current_user_session and current_user.is_admin? %>
+              <li> <%= link_to "Usuarios", users_path %> </li>
+            <% end %>
+            <% if current_user_session %>
+              <li><%= link_to 'Participantes', personas_url if current_user.is_admin?%></li>
+              <li><%= link_to "Perfil", current_user %></li>
+              <li><%= link_to "Configuracion", edit_user_path(current_user) %></li>
+            <% end %>
+            <% if current_user_session %>
+              <li><%= link_to "Cerrar sesion", logout_url, :method => :delete %></li>
+             <% else %>
+              <li><%= link_to "Iniciar sesion", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+
+        <%# logo = image_tag("../header2.png", :alt => "logo uach") %>
+        <%#= link_to logo, root_path %>
+ </header>
+ <% if current_user_session %>
+            <h3>Bienvenido: <%= current_user.login %></h3>
+         <% end %>
+ <div class="content">
+
+   
+<%= yield %>
+ </div>
+  <div id="FOOTER">
+    <div class="creditos">DIF.  2013 <br/> Desarrollo Integral de la Familia del Estado de Chihuahua.<br/>
+Av. Tecnológico 2903, Col. Magisterial 31310 <br/>
+Tel. (614) 214-4000 | Fax: (614) 413-7689 <br /></div>
+  </div><!-- FOOTER -->
+</div>
+</body>
+</html>

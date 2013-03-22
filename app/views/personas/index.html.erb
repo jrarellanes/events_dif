@@ -1,0 +1,37 @@
+<h1>Listing personas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apaterno</th>
+    <th>Amaterno</th>
+    <th>Ocupacion</th>
+    <th>Correo</th>
+    <th>Comunidadorigen</th>
+    <th>Colonia</th>
+    <th>Nfam</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personas.each do |persona| %>
+  <tr>
+    <td><%= persona.nombre %></td>
+    <td><%= persona.apaterno %></td>
+    <td><%= persona.amaterno %></td>
+    <td><%= persona.ocupacion %></td>
+    <td><%= persona.correo %></td>
+    <td><%= persona.comunidadOrigen %></td>
+    <td><%= persona.colonia %></td>
+    <td><%= persona.nfam %></td>
+    <td><%= link_to 'Show', persona %></td>
+    <td><%= link_to 'Edit', edit_persona_path(persona) %></td>
+    <td><%= link_to 'Destroy', persona, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Persona', new_persona_path %>

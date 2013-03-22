@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @persona.nombre %>
+</p>
+
+<p>
+  <b>Apaterno:</b>
+  <%= @persona.apaterno %>
+</p>
+
+<p>
+  <b>Amaterno:</b>
+  <%= @persona.amaterno %>
+</p>
+
+<p>
+  <b>Ocupacion:</b>
+  <%= @persona.ocupacion %>
+</p>
+
+<p>
+  <b>Correo:</b>
+  <%= @persona.correo %>
+</p>
+
+<p>
+  <b>Comunidadorigen:</b>
+  <%= @persona.comunidadOrigen %>
+</p>
+
+<p>
+  <b>Colonia:</b>
+  <%= @persona.colonia %>
+</p>
+
+<p>
+  <b>Nfam:</b>
+  <%= @persona.nfam %>
+</p>
+
+
+<%= link_to 'Edit', edit_persona_path(@persona) %> |
+<%= link_to 'Back', personas_path %>

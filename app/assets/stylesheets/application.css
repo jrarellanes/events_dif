@@ -1,0 +1,11 @@
+/*
+ * FIXME: Introduce SCSS & Sprockets
+ *= require_tree .
+ */
+ #imagen_congreso{
+     
+}
+
+#busqueda_datos_participante{
+    margin: 15px;
+}

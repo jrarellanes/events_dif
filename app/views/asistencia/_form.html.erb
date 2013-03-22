@@ -1,0 +1,25 @@
+<%= form_for(@asistencium) do |f| %>
+  <% if @asistencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asistencium.errors.count, "error") %> prohibited this asistencium from being saved:</h2>
+
+      <ul>
+      <% @asistencium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :persona_id %><br />
+    <%= f.number_field :persona_id %>
+  </div>
+  <div class="field">
+    <%= f.label :evento_id %><br />
+    <%= f.number_field :evento_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

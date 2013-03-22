@@ -1,0 +1,35 @@
+<h1>Programación de Eventos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Tipo evento</th>
+    <th>Fecha</th>
+    <th>Ubicacion</th>
+    <th>Descripcion</th>
+    <th>Cupo</th>
+    <th>Hora</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @eventos.each do |evento| %>
+  <tr>
+    <td><%= evento.nombre %></td>
+    <td><%= evento.tipo_evento_id %></td>
+    <td><%= evento.fecha %></td>
+    <td><%= evento.ubicacion %></td>
+    <td><%= evento.descripcion %></td>
+    <td><%= evento.cupo %></td>
+    <td><%= evento.hora %></td>
+    <td><%= link_to 'Mostrar', evento %></td>
+    <td><%= link_to 'Editar', edit_evento_path(evento) %></td>
+    <td><%= link_to 'Eliminar', evento, confirm: '¿Esta seguro de eliminar el evento?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Registrar nuevo evento', new_evento_path %>

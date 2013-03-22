@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  tipo_evento_id: 1
+  fecha: 2013-03-22
+  ubicacion: MyString
+  descripcion: MyText
+  cupo: 1
+  hora: 2013-03-22 10:06:15
+
+two:
+  nombre: MyString
+  tipo_evento_id: 1
+  fecha: 2013-03-22
+  ubicacion: MyString
+  descripcion: MyText
+  cupo: 1
+  hora: 2013-03-22 10:06:15

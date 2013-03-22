@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Persona:</b>
+  <%= @asistencium.persona_id %>
+</p>
+
+<p>
+  <b>Evento:</b>
+  <%= @asistencium.evento_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_asistencium_path(@asistencium) %> |
+<%= link_to 'Back', asistencia_path %>
